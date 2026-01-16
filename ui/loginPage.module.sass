@@ -1,0 +1,25 @@
+@use "@/ui/styles/_appw_fonts" as fonts
+@use "@/ui/styles/_appw_colors" as colors
+@use "@/ui/styles/_appw_styles" as styles
+
+.banner, .section
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    justify-content: space-between
+    width: 50%
+    height: 100vh
+
+.section
+    gap: 32px
+    padding: 120px 64px
+    color: colors.$primary
+
+.banner
+    padding: 120px 64px
+    background: colors.$accent-06
+
+    .image
+        @include styles.no-user-select
+        width: 100%
+        object-fit: contain

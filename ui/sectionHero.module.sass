@@ -1,0 +1,17 @@
+@use "@/ui/styles/_appw_styles" as styles
+
+.section
+    @include styles.width-page
+    @include styles.center
+    flex-direction: column
+    gap: 32px
+    padding: 120px 0
+    
+    p
+        margin-bottom: 18px
+
+.imageWrapper
+    height: 250px
+
+    .image
+        @include styles.no-user-select

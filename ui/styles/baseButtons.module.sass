@@ -1,0 +1,176 @@
+@use './_appw_fonts' as fonts
+@use './_appw_colors' as colors
+@use './_appw_styles' as styles
+
+.button
+    @include styles.before-fill
+    @include styles.no-user-select
+    display: inline-flex
+    align-items: center
+    justify-content: center
+    gap: 8px
+    height: fit-content
+    width: fit-content
+    border: 1px solid transparent
+    cursor: pointer
+    transition: all 0.2s
+
+    *, &::before
+        transition: all 0.2s
+        
+    &:hover
+        opacity: 0.9
+        transform: scale(1.04)
+
+        &::before
+            transform: scale(1.02)
+
+    &:active
+        opacity: 0.7
+        transform: scale(1)
+
+        &::before
+            opacity: 0.7
+            transform: scale(0.92)
+
+    &:active:not(:hover)
+        &::before
+            transform: scale(1.06)
+
+
+// default
+
+.buttonDefault
+    @extend .button
+    @include fonts.p
+    padding: 12px 21px
+    color: colors.$secondary
+    border-radius: 16px
+
+    &::before
+        background: colors.$button-fill
+        border: 1px solid colors.$button-border
+        border-radius: 16px
+    
+    &:hover
+        color: colors.$secondary-focus
+        &::before
+            border-radius: 12px
+            border-color: colors.$quaternary
+
+    &:active
+        &::before
+            border-radius: 12px
+
+.buttonDefaultRectangle
+    @extend .buttonDefault
+    width: 48px
+    height: 48px
+    padding: 0
+    
+.buttonHeader
+    opacity: 1 !important
+    &::before
+        backdrop-filter: blur(4px)
+        background: colors.$button-border
+        opacity: 1 !important
+    &:active
+        &::before
+            background: colors.$button-fill
+
+.buttonDefaultHeader
+    @extend .buttonDefault
+    @extend .buttonHeader
+    
+.buttonDefaultRectangleHeader
+    @extend .buttonDefaultRectangle
+    @extend .buttonHeader
+
+
+
+
+
+// big
+
+.buttonBig
+    @extend .button
+    @include fonts.h2-accent
+    padding: 14px 26px
+
+    &::before
+        background: colors.$button-fill
+        border-radius: 99px
+
+
+// circle
+
+.buttonCircle
+    @extend .button
+    @include styles.center
+    height: 64px
+    width: 64px
+    border-radius: 99px
+
+    &::before
+        background: colors.$background
+        border: 1px solid colors.$button-border
+        border-radius: 99px
+    
+    &:hover
+        transform: scale(1.12)
+
+        &::before
+            border-color: colors.$quaternary
+            transform: scale(1)
+        svg
+            filter: brightness(1.1)
+            transform: scale(1.05)
+
+    &:active
+        transform: scale(1)
+        &::before
+            transform: scale(1)
+        svg
+            transform: scale(1)
+
+.buttonCircleDanger
+    @extend .buttonCircle
+    &:hover
+        svg path
+            stroke: colors.$danger
+        &::before
+            transition: all 0.2s
+            border-color: colors.$danger
+
+    &:active
+        svg path
+            transition: all 0.45s
+            stroke: colors.$background
+        &::before
+            transition: all 0.45s
+            background: colors.$danger
+
+.buttonFluffy
+    @extend .button
+    @include fonts.h3-bold
+    height: 64px
+    width: 149px
+    color: colors.$background
+    text-wrap: nowrap
+
+    &::before
+        height: 64px
+        min-height: 64px
+        background-image: url('/images/fluffy/fill.svg')
+        background-size: contain
+        background-repeat: no-repeat
+        background-position: center
+
+.buttonFluffyOutline
+    @extend .buttonFluffy
+    width: 289px
+    color: colors.$accent
+    font-weight: fonts.$weight-semibold
+
+    &::before
+        background-image: url('/images/fluffy/stroke.svg')

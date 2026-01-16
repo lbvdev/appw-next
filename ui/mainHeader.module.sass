@@ -1,0 +1,29 @@
+@use "@/ui/styles/_appw_colors" as colors
+@use "@/ui/styles/_appw_styles" as styles
+@use "@/ui/styles/_appw_anims" as anims
+
+.logo
+    @include styles.no-user-select
+    @include anims.default-button
+    width: 58px
+    
+.header
+    @include styles.width-page
+    @include styles.before-fill
+    position: fixed
+    inset: 0 0 auto 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    width: 100%
+    padding: 24px 32px
+    z-index: 100
+    background: transparent
+
+    &::before
+        background: linear-gradient(180deg, #000 24.52%, rgba(0, 0, 0, 0.64) 71.15%, rgba(0, 0, 0, 0.00) 100%)
+        opacity: 0
+        transition: opacity 0.4s 0.3s
+
+    &.scrolled::before
+        opacity: 1

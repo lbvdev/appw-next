@@ -1,0 +1,75 @@
+// vars
+
+@use '@/ui/styles/_appw_colors' as colors
+    
+$family-accent: 'EB Garamond', serif
+$family-primary: 'Inter', sans-serif
+
+$size-h1-accent: 48px
+$size-h1: 38px
+$size-h2-accent: 24px
+$size-h2: 24px
+$size-h3-accent: 18px
+$size-h3: 18px
+$size-p: 16px
+$size-p-small: 14px
+
+$weight-regular: 400
+$weight-medium: 500
+$weight-semibold: 600
+$weight-bold: 700
+
+// presets
+
+@mixin _accent
+    font-weight: $weight-bold
+    font-family: $family-accent
+
+@mixin h1
+    color: colors.$primary
+    font-size: $size-h1
+    font-weight: $weight-medium
+    font-family: $family-primary
+    line-height: 1.4
+
+@mixin h1-accent
+    @include h1
+    @include _accent
+    font-size: $size-h1-accent
+    color: colors.$accent
+
+@mixin h2
+    color: colors.$primary
+    font-size: $size-h2
+    font-weight: $weight-regular
+    font-family: $family-primary
+
+@mixin h2-accent
+    @include h2
+    @include _accent
+    font-size: $size-h2-accent
+
+@mixin h3
+    font-size: $size-h3
+    font-weight: $weight-medium
+    font-family: $family-primary
+
+@mixin h3-accent
+    @include h3
+    @include _accent
+    font-size: $size-h3-accent
+
+@mixin h3-bold
+    @include h3
+    font-weight: $weight-bold
+
+@mixin p
+    color: colors.$tertiary
+    font-size: $size-p
+    font-weight: $weight-medium
+    font-family: $family-primary
+
+@mixin p-small
+    @include p
+    font-size: $size-p-small
+    font-weight: $weight-regular
