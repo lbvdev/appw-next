@@ -5,6 +5,8 @@
 .button
     @include styles.before-fill
     @include styles.no-user-select
+    --border-radius: 16px
+
     display: inline-flex
     align-items: center
     justify-content: center
@@ -12,12 +14,17 @@
     height: fit-content
     width: fit-content
     border: 1px solid transparent
+    border-radius: var(--border-radius)
     cursor: pointer
     transition: all 0.2s
+    white-space: nowrap
 
     *, &::before
         transition: all 0.2s
         
+    &::before 
+        border-radius: var(--border-radius)
+
     &:hover
         opacity: 0.9
         transform: scale(1.04)
@@ -45,12 +52,10 @@
     @include fonts.p
     padding: 12px 21px
     color: colors.$secondary
-    border-radius: 16px
 
     &::before
         background: colors.$button-fill
         border: 1px solid colors.$button-border
-        border-radius: 16px
     
     &:hover
         color: colors.$secondary-focus
@@ -86,8 +91,11 @@
     @extend .buttonDefaultRectangle
     @extend .buttonHeader
 
-
-
+.buttonDefaultMuted
+    @extend .buttonDefault
+    &::before
+        background: transparent
+        border-radius: 32px
 
 
 // big
@@ -95,11 +103,11 @@
 .buttonBig
     @extend .button
     @include fonts.h2-accent
+    --border-radius: 99px
     padding: 14px 26px
 
     &::before
         background: colors.$button-fill
-        border-radius: 99px
 
 
 // circle
@@ -107,14 +115,13 @@
 .buttonCircle
     @extend .button
     @include styles.center
+    --border-radius: 99px
     height: 64px
     width: 64px
-    border-radius: 99px
 
     &::before
         background: colors.$background
         border: 1px solid colors.$button-border
-        border-radius: 99px
     
     &:hover
         transform: scale(1.12)

@@ -1,4 +1,4 @@
-import { LoginSection, LoginBanner } from "@/ui/loginPage";
+import { LoginSection, LoginBanner } from "@/ui/LoginPage";
 
 export default function Login() {
   return (

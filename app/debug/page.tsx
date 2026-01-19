@@ -1,4 +1,4 @@
-import Icon from "@/ui/icon";
+import Icon from "@/ui/Icon";
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";

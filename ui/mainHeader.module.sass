@@ -12,6 +12,7 @@
     @include styles.before-fill
     position: fixed
     inset: 0 0 auto 0
+    margin: 0 auto
     display: flex
     justify-content: space-between
     align-items: center
@@ -27,3 +28,31 @@
 
     &.scrolled::before
         opacity: 1
+
+.menuWrapper
+    position: relative
+
+    .menu
+        display: flex
+        flex-direction: column
+        align-items: flex-end
+        gap: 4px
+        position: absolute
+        top: calc(100% + 10px)
+        right: 0
+        transition: all 0.2s
+
+        > *
+            transition: opacity 0.4s, transform 0.45s, filter 0.1s, scale 0s
+
+        @for $i from 1 through 20
+            > *:nth-child(#{$i})
+                transition-delay: #{$i * 0.05}s
+
+    .menu:not(.open)
+        pointer-events: none
+        > *
+            opacity: 0 !important
+            transform: translateY(-20px) !important
+            filter: blur(12px) !important
+            transition: opacity 0.4s, transform 0.45s, filter 0.4s, scale 0.4s

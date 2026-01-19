@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Icon from "./icon";
+import Icon from "./Icon";
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";

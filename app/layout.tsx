@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, EB_Garamond } from "next/font/google";
 import "@/ui/styles/base.sass";
-import MainHeader from "@/ui/mainHeader";
+import MainHeader from "@/ui/MainHeader";
 
 const inter = Inter({
   variable: "--font-inter",

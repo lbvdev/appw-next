@@ -1,0 +1,15 @@
+@use './_appw_fonts' as fonts
+@use './_appw_colors' as colors
+@use './_appw_styles' as styles
+
+.divider
+    color: colors.$divider
+
+.hDivider
+    @extend .divider
+    width: 100%
+    margin-top: 8px
+    margin-bottom: 6px
+
+.muted
+    opacity: 0.5

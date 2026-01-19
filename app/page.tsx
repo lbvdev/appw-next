@@ -1,4 +1,4 @@
-import SectionHero from "@/ui/sectionHero";
+import SectionHero from "@/ui/SectionHero";
 
 export default function Home() {
   return (
