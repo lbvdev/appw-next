@@ -4,7 +4,7 @@ import Link from "@/ui/components/Link";
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
-import styles from "./sectionHero.module.sass";
+import styles from "./SectionHero.module.sass";
 
 export default function SectionHero() {
   return (

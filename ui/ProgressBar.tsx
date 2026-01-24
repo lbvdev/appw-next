@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 
-import styles from "./progressBar.module.sass";
+import styles from "./ProgressBar.module.sass";
 
 export default function ProgressBar() {
     const pathname = usePathname()

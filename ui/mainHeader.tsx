@@ -10,7 +10,7 @@ import Link from "./components/Link";
 
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
 import baseElements from "@/ui/styles/baseElements.module.sass";
-import styles from "./mainHeader.module.sass";
+import styles from "./MainHeader.module.sass";
 
 export default function MainHeader() {
     const [isScrolled, setIsScrolled] = useState(false)

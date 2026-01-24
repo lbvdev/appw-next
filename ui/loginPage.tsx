@@ -3,7 +3,7 @@ import Input from "@/ui/components/Input"
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
-import styles from "@/ui/loginPage.module.sass";
+import styles from "@/ui/LoginPage.module.sass";
 
 export function LoginSection() {
     return (
