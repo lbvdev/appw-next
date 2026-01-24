@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from "react";
-
-import Link from "next/link";
-import Image from "next/image";
-import Icon from "./Icon";
-
+import { useState, useEffect, useRef } from "react";
 import { useClickOutside } from "@/lib/hooks/useClickOutside";
+import { useMenu } from "@/lib/hooks/useMenu";
+
+import Image from "next/image";
+import Icon from "./components/Icon";
+import Link from "./components/Link";
+
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
 import baseElements from "@/ui/styles/baseElements.module.sass";
 import styles from "./mainHeader.module.sass";
@@ -21,48 +22,56 @@ export default function MainHeader() {
     }, [])
 
     const [isMenuOpen, setIsMenuOpen] = useState(false)
+    const menuRef = useRef<HTMLDivElement>(null)
     const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
     useClickOutside(`.${styles.menuWrapper}`, () => setIsMenuOpen(false), isMenuOpen)
+    useMenu(menuRef, isMenuOpen, styles.open)
 
     return (
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-            <Link href="/" className={styles.logo}>
-                <Image src="/images/logo.svg" alt="Appw" width={100} height={100} />
+            <Link 
+                href="/" 
+                className={styles.logo}
+            >
+                <Image src="/images/logo.svg" alt="Appw" width={58} height={31} />
             </Link>
             <div className="flex gap-1 items-center">
-                <button className={buttonStyles.buttonDefaultRectangleHeader}>
+                <button className={buttonStyles.defaultRectangleHeader}>
                     <Icon name="plus" />
                 </button>
-                <a href="/login" className={buttonStyles.buttonDefaultHeader}>
+                <Link href="/login" className={buttonStyles.defaultHeader}>
                     <Icon name="user" />
                     Войти
-                </a>
+                </Link>
                 <div className={styles.menuWrapper}>
-                    <button className={buttonStyles.buttonCircle} onClick={toggleMenu}>
+                    <button className={buttonStyles.circle} onClick={toggleMenu}>
                         <Icon name="menu" />
                     </button>
-                    <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
-                        <div><a href="/account" className={buttonStyles.buttonDefault}>
+                    <div ref={menuRef} className={styles.menu}>
+                        <div><Link href="/me" className={buttonStyles.default}>
                             <Icon name="user" />
                             Аккаунт
-                        </a></div>
-                        <div><a href="/graphs" className={buttonStyles.buttonDefault}>
+                        </Link></div>
+                        <div><Link href="/graphs" className={buttonStyles.default}>
+                            <Icon name="graph" />
                             Graphs
-                        </a></div>
-                        <div><a href="/faq" className={buttonStyles.buttonDefault}>
+                        </Link></div>
+                        <div><Link href="/faq" className={buttonStyles.default}>
+                            <Icon name="question" />
                             FAQ и прочее
-                        </a></div>
-                        <div><a href="/faq" className={buttonStyles.buttonDefault}>
+                        </Link></div>
+                        <div><Link href="/faq" className={buttonStyles.default}>
+                            <Icon name="bug" />
                             Сообщить об ошибке
-                        </a></div>
+                        </Link></div>
                         <hr className={baseElements.hDivider} />
-                        <div><a href="https://github.com/lbvdev/appw" className={buttonStyles.buttonDefaultMuted}>
+                        <div><Link href="https://github.com/lbvdev/appw" className={buttonStyles.defaultMuted}>
                             Alpha
                             <span className={baseElements.muted}>v0.01</span>
-                        </a></div>
-                        <div><a href="https://lbvo.ru" className={buttonStyles.buttonDefaultMuted}>
+                        </Link></div>
+                        <div><Link href="https://lbvo.ru" className={buttonStyles.defaultMuted}>
                             Made by LBV_DEV
-                        </a></div>
+                        </Link></div>
                     </div>
                 </div>
             </div>

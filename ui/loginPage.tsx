@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Input from "@/ui/components/Input"
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
@@ -7,8 +8,28 @@ import styles from "@/ui/loginPage.module.sass";
 export function LoginSection() {
     return (
         <section className={styles.section}>
-            <h1 className={textStyles.h1Accent}>Добро пожаловать</h1>
-            <button className={buttonStyles.buttonFluffy}>
+            <div className="flex flex-col gap-4">
+                <h1 className={textStyles.h1Accent}>Добро пожаловать</h1>
+                <p className={textStyles.pSmall}>Создайте или войдите в аккаунт чтобы добавлять свои игры, комментировать и оставлять отзывы!</p>
+            </div>
+            <div className="flex flex-col gap-4">
+                <Input
+                name="email"
+                label="Емейл"
+                placeholder="yourmail@mail.com"
+                type="email"></Input>
+                <Input
+                name="username"
+                label="Имя пользователя"
+                placeholder="username"
+                type="email"></Input>   
+                <Input
+                name="password"
+                label="Придумайте пароль"
+                placeholder="securepassword"
+                type="password"></Input>
+            </div>
+            <button className={buttonStyles.fluffy}>
                 Войти
             </button>
         </section>

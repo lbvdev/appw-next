@@ -1,5 +1,6 @@
 import Image from "next/image";
-import Icon from "./Icon";
+import Icon from "@/ui/components/Icon";
+import Link from "@/ui/components/Link";
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
@@ -28,13 +29,13 @@ export default function SectionHero() {
         а также выставить свое приложение на продажу, комиссия равна 10%
       </p>
       <div className="flex gap-2">
-        <button className={buttonStyles.buttonFluffy}>
+        <button className={buttonStyles.fluffy}>
           <Icon name="search" type="black" />
           Искать
         </button>
-        <a href="/login" className={buttonStyles.buttonFluffyOutline}>
+        <Link href="/login" className={buttonStyles.fluffyOutline}>
           Войти или создать аккаунт
-        </a>
+        </Link>
       </div>
     </section>
   );

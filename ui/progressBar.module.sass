@@ -1,0 +1,22 @@
+@use "@/ui/styles/_appw_colors" as colors
+@use "@/ui/styles/_appw_styles" as styles
+@use "@/ui/styles/_appw_anims" as anims
+
+.progressBar
+    @include styles.no-user-select
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    height: 1.5px
+    background: transparent
+    z-index: 9999
+    pointer-events: none
+
+    .progressBarFill
+        height: 100%
+        background: colors.$accent
+        transition: all 0.3s ease-out
+
+    &:not(.visible)
+        opacity: 0

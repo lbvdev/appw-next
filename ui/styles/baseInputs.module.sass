@@ -1,0 +1,70 @@
+@use './_appw_fonts' as fonts
+@use './_appw_anims' as anims
+@use './_appw_colors' as colors
+@use './_appw_styles' as styles
+
+//inputs
+
+.input
+    @include fonts.p
+    @include styles.before-fill
+    @include styles.no-user-select
+    --border-radius: 12px
+
+    display: flex !important
+    background: transparent
+    border: none
+    outline: none
+
+    input
+        padding: 14px
+        border-radius: var(--border-radius)
+        color: colors.$secondary
+        transition: color 0.3s
+
+        &:focus, &:focus-visible, &:not(:placeholder-shown)
+            color: colors.$primary
+
+        &[type='password']:not(:placeholder-shown)
+            -webkit-text-stroke: 2px
+            -webkit-text-stroke-color: colors.$primary
+
+    &::before
+        border: 1px solid
+        border-color: transparent
+        border-radius: var(--border-radius)
+        transition: all 0.2s
+
+    &:hover, &:has(input:focus, input:focus-visible)
+        &::before
+            inset: -2px
+            width: calc(100% + 4px)
+            height: calc(100% + 4px)
+
+    &:has(input:focus, input:focus-visible)
+        &::before
+            background: colors.$focus
+.default
+    @extend .input
+
+    &::before
+        background: colors.$button-fill
+        border-color: colors.$button-border
+
+    &:hover
+        &::before
+            border: 1px solid colors.$focus
+
+// label
+
+.label
+    margin: 0 14px
+    @include fonts.p-small
+
+
+// wrapper
+
+.wrapper
+    display: flex
+    flex-direction: column
+    gap: 6px

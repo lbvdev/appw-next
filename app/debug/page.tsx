@@ -1,4 +1,4 @@
-import Icon from "@/ui/Icon";
+import Icon from "@/ui/components/Icon";
 
 import textStyles from "@/ui/styles/baseText.module.sass";
 import buttonStyles from "@/ui/styles/baseButtons.module.sass";
@@ -20,12 +20,12 @@ export default function Home() {
         </div>
         <h1>Buttons</h1>
         <div className="flex flex-col gap-4">
-          <button className={buttonStyles.buttonDefault}>Default</button>
-          <button className={buttonStyles.buttonBig}>Big</button>
-          <button className={buttonStyles.buttonCircle}>
+          <button className={buttonStyles.default}>Default</button>
+          <button className={buttonStyles.big}>Big</button>
+          <button className={buttonStyles.circle}>
             <Icon name="menu" />
           </button>
-          <button className={buttonStyles.buttonCircleDanger}>
+          <button className={buttonStyles.circleDanger}>
             <Icon name="close" />
           </button>
         </div>

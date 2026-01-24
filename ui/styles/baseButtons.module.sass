@@ -29,6 +29,9 @@
         opacity: 0.9
         transform: scale(1.04)
 
+        & > svg
+            filter: brightness(1.3)
+
         &::before
             transform: scale(1.02)
 
@@ -47,7 +50,7 @@
 
 // default
 
-.buttonDefault
+.default
     @extend .button
     @include fonts.p
     padding: 12px 21px
@@ -67,32 +70,34 @@
         &::before
             border-radius: 12px
 
-.buttonDefaultRectangle
-    @extend .buttonDefault
+.defaultRectangle
+    @extend .default
     width: 48px
     height: 48px
     padding: 0
     
-.buttonHeader
+.header
     opacity: 1 !important
     &::before
         backdrop-filter: blur(4px)
-        background: colors.$button-border
+        background: transparent
+        border: none
         opacity: 1 !important
     &:active
         &::before
             background: colors.$button-fill
 
-.buttonDefaultHeader
-    @extend .buttonDefault
-    @extend .buttonHeader
-    
-.buttonDefaultRectangleHeader
-    @extend .buttonDefaultRectangle
-    @extend .buttonHeader
 
-.buttonDefaultMuted
-    @extend .buttonDefault
+.defaultHeader
+    @extend .default
+    @extend .header
+
+.defaultRectangleHeader
+    @extend .defaultHeader
+    @extend .defaultRectangle
+
+.defaultMuted
+    @extend .default
     &::before
         background: transparent
         border-radius: 32px
@@ -100,7 +105,7 @@
 
 // big
 
-.buttonBig
+.big
     @extend .button
     @include fonts.h2-accent
     --border-radius: 99px
@@ -112,7 +117,7 @@
 
 // circle
 
-.buttonCircle
+.circle
     @extend .button
     @include styles.center
     --border-radius: 99px
@@ -140,8 +145,8 @@
         svg
             transform: scale(1)
 
-.buttonCircleDanger
-    @extend .buttonCircle
+.circleDanger
+    @extend .circle
     &:hover
         svg path
             stroke: colors.$danger
@@ -157,7 +162,7 @@
             transition: all 0.45s
             background: colors.$danger
 
-.buttonFluffy
+.fluffy
     @extend .button
     @include fonts.h3-bold
     height: 64px
@@ -173,8 +178,8 @@
         background-repeat: no-repeat
         background-position: center
 
-.buttonFluffyOutline
-    @extend .buttonFluffy
+.fluffyOutline
+    @extend .fluffy
     width: 289px
     color: colors.$accent
     font-weight: fonts.$weight-semibold
