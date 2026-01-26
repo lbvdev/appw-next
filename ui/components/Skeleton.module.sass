@@ -1,3 +1,6 @@
+@use "@/ui/styles/_appw_colors" as colors
+@use "@/ui/styles/_appw_styles" as styles
+    
 .root
     display: inline-block
     position: relative
@@ -10,6 +13,8 @@
     overflow: hidden
 
 .skeleton
+    @include styles.no-user-select
+    cursor: wait !important
     display: inline-flex
     flex-wrap: wrap
     gap: 1ch
@@ -22,6 +27,7 @@
     background: linear-gradient(90deg, #e5e7eb21 0%, #e5e7eb28 80%, #e5e7eb21 100%)
     background-size: 600% 100%
     animation: skeleton-shimmer 3s 0.5s ease-in infinite
+    cursor: wait !important
 
 @keyframes skeleton-shimmer
     0%

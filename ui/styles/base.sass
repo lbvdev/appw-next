@@ -1,10 +1,5 @@
-@use "tailwindcss"
 @use './_appw_colors' as colors
 @use './_appw_styles' as styles
-
-*, *::before, *::after
-  box-sizing: border-box
-
 
 // selection
 
@@ -17,18 +12,16 @@
   @include styles.selection
     text-shadow: 0 0 1px colors.$accent, 0 0 1px colors.$accent, 0 0 1px colors.$accent, 0 0 1px colors.$accent, 1px 0 0 colors.$accent, -1px 0 0 colors.$accent, 0 1px 0 colors.$accent, 0 -1px 0 colors.$accent
 
-
 // todo: remove?
-@theme inline 
+@theme inline
   --font-sans: var(--font-inter)
   --font-serif: var(--font-eb-garamond)
-
 
 body, html
   max-width: 100vw
   background: colors.$background
   color: colors.$primary
-  
+
 body
   overflow-x: hidden
   overflow-y: auto
@@ -37,6 +30,13 @@ body
   align-items: center
   min-height: 100vh
 
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+// override defaults
+
+*, *::before, *::after
+  box-sizing: border-box
 
 a:-webkit-any-link, button
   outline: 2px solid
@@ -44,3 +44,16 @@ a:-webkit-any-link, button
   outline-color: transparent
   &:focus-visible
     outline-color: colors.$accent
+
+h1,h2,h3,h4,h5,h6,p
+  margin: 0
+
+button
+    background: transparent
+a, button
+  text-decoration: none
+
+hr
+  border-color: #1F1F25CC
+  opacity: 0.2
+  margin: 0

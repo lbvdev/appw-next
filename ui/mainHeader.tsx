@@ -28,6 +28,8 @@ export default function MainHeader() {
     useMenu(menuRef, isMenuOpen, styles.open)
 
     return (
+        <>
+        <div className={styles.margin}></div>
         <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
             <Link 
                 href="/" 
@@ -35,7 +37,7 @@ export default function MainHeader() {
             >
                 <Image src="/images/logo.svg" alt="Appw" width={58} height={31} />
             </Link>
-            <div className="flex gap-1 items-center">
+            <nav className={styles.nav}>
                 <button className={buttonStyles.defaultRectangleHeader}>
                     <Icon name="plus" />
                 </button>
@@ -74,7 +76,8 @@ export default function MainHeader() {
                         </Link></div>
                     </div>
                 </div>
-            </div>
+            </nav>
         </header>
+        </>
     )
 }

@@ -1,0 +1,40 @@
+@use "@/ui/styles/_appw_colors" as colors
+@use "@/ui/styles/_appw_styles" as styles
+@use "@/ui/styles/_appw_divs" as divs
+
+.gameCard
+    @include divs.flex-column(12px)
+    max-width: 850px
+    &, *
+        z-index: 10
+
+    .wrapper
+        background-color: colors.$background
+        border-radius: 42px
+
+    .wrapperPadded
+        @extend .wrapper
+        padding: 32px
+
+    .hero
+        @include divs.flex-column(16px)
+        padding: 16px
+        border-top-right-radius: 42px
+        border-top-left-radius: 42px        
+        background: linear-gradient(180deg, #FF2F00 0%, #991C00 83.27%)
+
+    .heroNav
+        @include divs.flex-between(16px)
+        
+        .gameHero
+
+    .info
+        @include divs.flex(24px)
+        display: flex
+        padding: 18px 32px 24px 32px
+
+        .item
+            @include divs.flex-column(4px)
+
+.dividerHor 
+    transform: rotate(90deg)

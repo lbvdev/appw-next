@@ -1,0 +1,23 @@
+@mixin flex($gap)
+    display: flex
+    gap: $gap
+
+@mixin flex-center($gap)
+    @include flex($gap)
+    align-items: center
+
+@mixin flex-between($gap)
+    @include flex($gap)
+    justify-content: space-between
+    align-items: center
+
+@mixin flex-column($gap)
+    display: flex
+    flex-direction: column
+    gap: $gap
+
+
+
+@mixin flex-column-between($gap)
+    @include flex-column($gap)
+    justify-content: space-between

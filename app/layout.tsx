@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="ru" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${ebGaramond.variable} antialiased`}
+        className={`${inter.variable} ${ebGaramond.variable}`}
       >
         <ProgressBar />
         <MainHeader />
