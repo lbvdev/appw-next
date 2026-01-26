@@ -1,0 +1,104 @@
+{
+    "id": 1,
+    "link": "igra",
+    "user_id": "123",
+    "info": {
+        "title": "Game 1",
+        "description": "Description 1",
+        "short_description": "Short description 1",
+        "release_date": "2026-01-24T12:00:00.000Z",
+        "last_update": "2026-01-24T12:00:00.000Z",
+        "developer": "Developer 1",
+        "publisher": "Publisher 1",
+        "type": "game",
+        "tags": [
+            "action",
+            "adventure",
+            "multiplayer",
+            "singleplayer"
+        ],
+        "platforms": [
+            "windows",
+            "macos",
+            "linux"
+        ],
+        "languages": [
+            "english",
+            "russian"
+        ],
+        "createdAt": "2026-01-24T12:00:00.000Z"
+    },
+    "prices": [
+        {
+            "currency": "RUB",
+            "price": 100
+        },
+        {
+            "currency": "USD",
+            "price": 10
+        },
+        {
+            "currency": "EUR",
+            "price": 10
+        }
+    ],
+    "windows": {
+        "files": [
+            {
+                "platform": "windows",
+                "version": "1.0.0",
+                "parts": [
+                    {
+                        "title": "Основной файл",
+                        "description": "Установочный exe файл",
+                        "size_mb": 1500,
+                        "file_id": 149
+                    },
+                    {
+                        "title": "Патч 1.0.1",
+                        "description": "Обновление после установки",
+                        "size_mb": 250,
+                        "file_id": 150
+                    }
+                ]
+            }
+        ],
+        "requirements": {
+            "minimum": {
+                "cpu": 3,
+                "gpu": 5,
+                "ram_gb": 4,
+                "storage_mb": 120000
+            },
+            "recommended": {
+                "cpu": 5,
+                "gpu": 6,
+                "ram_gb": 16,
+                "storage_mb": 120000
+            }
+        }
+    },
+    "previews": [
+        {
+            "type": "image",
+            "url": "149"
+        },
+        {
+            "type": "video",
+            "url": "150"
+        }
+    ],
+    "settings": {
+        "visible": true,
+        "downloads_count_enabled": true,
+        "comments_enabled": true,
+        "ratings_enabled": true,
+        "views_enabled": true
+    },
+    "badges": {
+        "featured": false,
+        "exclusive": false,
+        "early_access": false,
+        "editor_choice": false
+    }
+}
